@@ -1,15 +1,15 @@
 import React from 'react'
+const Header = ({ title }) => {
 
-const Header = () => {
-    const headerStyle = {
-        // backgroundColor: 'darkblue', 
-        // color: '#fff'
-    }
   return (
     <header>
-      <h1>Groceries List</h1>
+      <h1>{title}</h1>
     </header>
   )
+}
+
+Header.defaultProps = {
+  title: "Default Title"
 }
 
 export default Header;
