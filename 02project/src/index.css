@@ -5,7 +5,7 @@
 }
 
 html {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 body {
@@ -17,19 +17,19 @@ body {
 
 form {
   width: 100%;
-  /* position: fixed; */
+  position: fixed;
 }
 
 button {
-  width: 33.3%;
+  width: 33.33%;
   font-size: 14px;
   padding: 10px;
   cursor: pointer;
 }
 
-button .selected {
-  color: #000;
-  background-color: #fff;
+button.selected {
+  background-color: #7c2f2f;
+  color: #fff;
 }
 
 ul {

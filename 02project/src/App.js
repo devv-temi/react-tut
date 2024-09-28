@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Form from "./Form";
+import List from "./List";
+import Table from "./Table";
 
 function App() {
   const API_URL = "https://jsonplaceholder.typicode.com/";
@@ -14,7 +16,7 @@ function App() {
         // if (!response.ok) throw Error("incorrect response")
         const data = await response.json();
         setItems(data);
-        console.log(data)
+        // console.log(data)
       } catch (err) {
         console.log(err);
       } finally {
@@ -30,6 +32,8 @@ function App() {
         requestType={requestType}
         setRequestType={setRequestType}
       />
+      {/* <List items={items} /> */}
+      <Table items={items} />
     </div>
   );
 }
