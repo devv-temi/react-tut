@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Host = () => {
+const Home = () => {
   return (
     <main>
-        <h1>HostPage</h1>
+        <h1>home</h1>
     </main>
   )
 }
 
-export default Host
+export default Home

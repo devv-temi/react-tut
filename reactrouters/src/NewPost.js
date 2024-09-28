@@ -3,7 +3,7 @@ import React from 'react'
 const NewPost = () => {
   return (
     <main>
-        <h1>New post</h1>
+        <h1>Newpost tagg</h1>
     </main>
   )
 }
