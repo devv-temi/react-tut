@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Post from './Post'
 
-const Feed = ({ posts }) => {
+
+const Feed = ({posts}) => {
+
+  
+ 
   return (
     <>
      {posts.map(post => (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom"
 
 const Post = ({ post }) => {
   return (
@@ -9,7 +9,7 @@ const Post = ({ post }) => {
         <p className="postDate">{post.datetime}</p>
       </Link>
       <p className="postBody">
-        {post.body.length <= 25 ? post.body : `${post.body.slice(0, 25)}...`}
+        {post.body.length <= 27 ? post.body : `${post.body.slice(0, 27)}...`}
       </p>
     </article>
   );

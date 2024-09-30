@@ -8,7 +8,7 @@ import NewPost from "./NewPost";
 import PostPage from "./PostPage";
 import About from "./About";
 import Missing from "./Missing";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -40,23 +40,26 @@ function App() {
   ]);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
+  const handleDelete = (id) => {
+    const postsList = posts.filter(post => post.id !== id);
+    setPosts(postsList);
+  };
+
   return (
     <div className="App">
       <Header title="React JSX Blog" />
       <Nav search={search} setSearch={setSearch} />
-      <Switch>
-        <Route exact path="/">
-          <Home posts={posts} />
-        </Route>
-        <Route exact path="./post">
-          <NewPost />
-        </Route>
-        <Route path="/post/:id">
-          <PostPage />
-        </Route>
-        <Route path="/about" component={About} />
-        <Route path="*" component={Missing} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home posts={posts} />} />
+        <Route path="/post" element={<NewPost />} />
+        <Route
+          path="/post/:id"
+          element={<PostPage posts={posts} handleDelete={handleDelete} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Missing />} />
+      </Routes>
       <Footer />
     </div>
   );
