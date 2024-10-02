@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const About = () => {
   return (
-    <main>
-        <h1>About page</h1>
+    <main className="About">
+      <h2>About</h2>
+      <p style={{ marginTop: "1rem" }}>
+        This blog is a project in the learn react series
+      </p>
     </main>
-  )
-}
+  );
+};
 
-export default About
+export default About;
