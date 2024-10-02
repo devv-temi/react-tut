@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 const Nav = () => {
   const posts = useStoreState((state) => state.posts);
   const search = useStoreState((state) => state.search);
-  const setSearch = useStoreState((actions) => actions.setSearch);
-  const setSearchResults = useStoreState((actions) => actions.setSearchResults);
+  const setSearch = useStoreActions((actions) => actions.setSearch);
+  const setSearchResults = useStoreActions((actions) => actions.setSearchResults);
 
   useEffect(() => {
     const filteredResult = posts.filter(
@@ -18,10 +17,10 @@ const Nav = () => {
 
     setSearchResults(filteredResult.reverse());
   }, [posts, search, setSearchResults]);
+
   return (
     <nav className="Nav">
       <form
-        action=""
         className="searchForm"
         onSubmit={(e) => e.preventDefault()}
       >
